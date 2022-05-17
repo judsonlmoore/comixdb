@@ -1,0 +1,111 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: comixDb
+email: no-reply@comixdb.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Serving you the funniest comix on the internet since 2022.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: jekyllrb
+# github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+include:
+  - _pages
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: page
+      author: comixDb
+  - scope:
+      path: ''
+      type: posts
+    values:
+      layout: posts
+      permalink: '/:title'
+      is_post: true
+      sitemap: true
+  - scope:
+      path: _pages
+    values:
+      layout: page
+      permalink: '/:basename/'
+      sitemap: false
+  - scope:
+      path: _landing-pages
+    values:
+      layout: use-case-single
+      permalink: '/:path/'
+      sitemap: true
+  - scope:
+      path: "assets/*"
+    values:
+      sitemap: false
+compress_html:
+  clippings: all
+  comments:
+    - '<!-- '
+    - ' -->'
+  endings:
+    - html
+    - head
+    - body
+    - li
+    - dt
+    - dd
+    - rt
+    - rp
+    - optgroup
+    - option
+    - colgroup
+    - caption
+    - thead
+    - tbody
+    - tfoot
+    - tr
+    - td
+    - th
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

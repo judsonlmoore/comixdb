@@ -1,0 +1,16 @@
+main:
+  # - title: Concerts
+  #   url: how-to-price-concert-tickets
+  # - title: Festivals 
+  #   url: how-to-price-festival-tickets
+  # - title: Performing Arts
+  #   url: how-to-price-performing-arts-tickets
+  # - title: Museums & Attractions
+  #   url: how-to-price-museum-and-attractions-tickets/
+  - title: Client Login
+    url: login
+bottom-bar:
+  - title: Terms of Service
+    url: /terms/
+  - title: Privacy Policy
+    url: /privacy/

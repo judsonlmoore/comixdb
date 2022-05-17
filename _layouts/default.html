@@ -1,0 +1,57 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% if jekyll.environment == 'production' %}
+    <script async src="xxx"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "xxx");
+    </script>
+    {% endif %}
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    {% seo %}
+
+    <!-- Theme CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/theme.css' | absolute_url }}"
+    />
+
+  </head>
+
+  {% capture layout %} 
+  {% if page.layout %}layout-{{ page.layout }} {% endif %}
+  {% endcapture %}
+
+  <body class="{{layout}}">
+
+    {{ content }}
+
+    <!-- Libs JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="{{ '/assets/js/infinite-scroll.pkgd.min.js' | absolute_url }}"></script>
+
+    <!-- Theme JS -->
+    <script src="{{ 'assets/js/theme.js' | absolute_url }}"></script>
+  </body>
+</html>
