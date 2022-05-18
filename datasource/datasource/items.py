@@ -18,6 +18,7 @@ class DatasourceItem(scrapy.Item):
     authorUrl = scrapy.Field()
     publishedDate = scrapy.Field()
     image_urls = scrapy.Field()
+    images = scrapy.Field()
 
     ## Timestamp fields
     published_at = scrapy.Field()

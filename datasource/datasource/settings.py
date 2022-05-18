@@ -62,12 +62,12 @@ TELNETCONSOLE_ENABLED = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-    # 'datasource.pipelines.DuplicatesPipeline': 1,
-    # 'scrapy.pipelines.images.ImagesPipeline': 2,
+ITEM_PIPELINES = {
+    'datasource.pipelines.DuplicatesPipeline': 1,
+    'scrapy.pipelines.images.ImagesPipeline': 2,
     # 'datasource.pipelines.EmptyPipeline': 3,
     # 'datasource.pipelines.MinTextPipeline': 4,
-# }
+}
 
 FEEDS = {
   "../output/data/inventory.jl": {
@@ -79,16 +79,16 @@ FEEDS = {
 ## WHERE TO STORE THE DOWNLOADED IMAGES ##
 ## Store images in local file system. 
 # Note that only one IMAGES_STORE can be defined.
-# IMAGES_STORE = '../output/images/'
+IMAGES_STORE = '../output/images/'
 
-# IMAGES_EXPIRES = 90 # Days until an image will be downloaded again. Default = 90
+IMAGES_EXPIRES = 90 # Days until an image will be downloaded again. Default = 90
 # IMAGES_THUMBS = {
 #   'small': (50, 50),
 #   'big': (270, 270),
 # }
-# IMAGES_MIN_HEIGHT = 10 # Minimum image height in px
-# IMAGES_MIN_WIDTH = 10 # Minimum image width in px
-# MEDIA_ALLOW_REDIRECTS = True # Default = False
+IMAGES_MIN_HEIGHT = 10 # Minimum image height in px
+IMAGES_MIN_WIDTH = 10 # Minimum image width in px
+MEDIA_ALLOW_REDIRECTS = True # Default = False
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
