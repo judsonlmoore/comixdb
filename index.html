@@ -4,7 +4,7 @@
 
 layout: default
 sitemap: true
-image: /assets/images/hero-bg.jpg
+<!-- image: /assets/images/hero-bg.jpg -->
 ---
 
 {% include navbar.html %}
@@ -40,5 +40,22 @@ image: /assets/images/hero-bg.jpg
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div>
+        <h1 class="mb-3 display-4">
+          Comix
+        </h1>
+        {% for post in site.posts %}
+        <p class="mb-6 lead text-white">
+          <a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
+        </p>
+        {% endfor %}
+        <a href="/request-demo" class="btn btn-primary me-3">Request a demo now</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% include footer.html %}
