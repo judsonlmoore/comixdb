@@ -63,15 +63,15 @@ TELNETCONSOLE_ENABLED = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'datasource.pipelines.DuplicatesPipeline': 1,
-    'scrapy.pipelines.images.ImagesPipeline': 2,
-    # 'datasource.pipelines.EmptyPipeline': 3,
-    # 'datasource.pipelines.MinTextPipeline': 4,
+  'datasource.pipelines.DuplicatesPipeline': 1,
+  'scrapy.pipelines.images.ImagesPipeline': 2,
+  # 'datasource.pipelines.EmptyPipeline': 3,
+  # 'datasource.pipelines.MinTextPipeline': 4,
 }
 
 FEEDS = {
-  "../output/data/inventory.jl": {
-    "format": "jsonlines",
+  "../_data/comics.json": {
+    "format": "json",
     "encoding": "utf8",
   },
 }
@@ -82,10 +82,10 @@ FEEDS = {
 IMAGES_STORE = '../output/images/'
 
 IMAGES_EXPIRES = 90 # Days until an image will be downloaded again. Default = 90
-# IMAGES_THUMBS = {
-#   'small': (50, 50),
-#   'big': (270, 270),
-# }
+IMAGES_THUMBS = {
+  'small': (50, 50),
+  'big': (270, 270),
+}
 IMAGES_MIN_HEIGHT = 10 # Minimum image height in px
 IMAGES_MIN_WIDTH = 10 # Minimum image width in px
 MEDIA_ALLOW_REDIRECTS = True # Default = False

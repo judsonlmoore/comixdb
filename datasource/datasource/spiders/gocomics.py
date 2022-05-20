@@ -18,8 +18,8 @@ class GoComicsSpider(CrawlSpider):
         )
     ]
 
-    def parse_item(self, response):
-        exists = response.xpath('//div[contains(@class,"comic__image")]')
+    def parse(self, response):
+        exists = response.xpath('//div[@data-shareable-model="FeatureItem"]')
         if exists:
             item = DatasourceItem()
 
@@ -28,12 +28,12 @@ class GoComicsSpider(CrawlSpider):
             item['sourceUrl'] = response.request.url
 
             ## Comic fields
-            # item['title'] = response.xpath('//').get()
+            item['title'] = response.xpath('//meta[@property="og:title"]/@content').get().replace(' | GoComics.com', '')
             # item['authorName'] = response.xpath('//').get()
             # item['authorHandle'] = response.xpath('//a[contains(@class,"Author__Twitter")]/text()').get()
             # item['authorUrl'] = response.xpath('//a[contains(@class,"Author__Twitter")]/@href').get()
             # item['publishedDate'] = response.xpath('//').get()
-            item['image_urls'] = response.xpath('//div[contains(@class,"comic__image")]').getall()
+            item['image_urls'] = response.xpath('//div[contains(@class,"comic__image")]//picture[@class="item-comic-image"]/img/@src').getall()
 
             ## Timestamp fields
             item['published_at'] = time.strftime("%B %d %Y", gmtime())

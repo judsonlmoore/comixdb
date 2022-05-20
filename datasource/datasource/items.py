@@ -19,7 +19,7 @@ class DatasourceItem(scrapy.Item):
     publishedDate = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()
-
+    
     ## Timestamp fields
     published_at = scrapy.Field()
     updated_at = scrapy.Field()
