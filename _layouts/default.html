@@ -31,15 +31,12 @@ layout: compress
       rel="stylesheet"
       href="{{ '/assets/css/theme.css' | absolute_url }}"
     />
-
   </head>
 
-  {% capture layout %} 
-  {% if page.layout %}layout-{{ page.layout }} {% endif %}
+  {% capture layout %} {% if page.layout %}layout-{{ page.layout }} {% endif %}
   {% endcapture %}
 
   <body class="{{layout}}">
-
     {{ content }}
 
     <!-- Libs JS -->
